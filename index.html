@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toque de Vênus | Massoterapia & Experiências Exclusivas em Fortaleza</title>
+    <meta name="description" content="Toque de Vênus — Massoterapia profissional e experiências exclusivas em Fortaleza, CE. Relaxamento, presença e conexão. Agende sua sessão." />
+    <meta name="keywords" content="massoterapia, massagem, relaxamento, Fortaleza, Ceará, bem-estar, toque de vênus" />
+    <meta property="og:title" content="Toque de Vênus | Massoterapia & Experiências Exclusivas" />
+    <meta property="og:description" content="Relaxamento • Presença • Conexão. Agende sua experiência exclusiva em Fortaleza, CE." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        background-color: #101029;
+        color: #AE84A0;
+        overflow-x: hidden;
+      }
+      /* Preloader */
+      #preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #101029;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.8s ease, visibility 0.8s ease;
+      }
+      #preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      #preloader .loader-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        color: #AE84A0;
+        letter-spacing: 0.3em;
+        animation: pulse-loader 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse-loader {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader">
+      <span class="loader-text">TOQUE DE VÊNUS</span>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
