@@ -22,29 +22,29 @@ function Navigation() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-void/80 backdrop-blur-xl py-4 shadow-lg shadow-void/50' : 'py-6'
+          scrolled ? 'bg-void/80 backdrop-blur-xl py-5 shadow-lg shadow-void/50' : 'py-7'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#" className="font-display text-lg md:text-xl tracking-[0.15em] text-mauve-light hover:text-cream transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-8 md:px-14 lg:px-20 flex items-center justify-between">
+          <a href="#" className="font-display text-lg md:text-xl tracking-[0.2em] text-mauve-light hover:text-cream transition-colors duration-300">
             Toque de Vênus
           </a>
           
-          <nav className="hidden md:flex items-center gap-10">
-            <a href="#experiencia" className="text-xs tracking-[0.2em] uppercase text-mauve hover:text-cream transition-colors duration-300">
+          <nav className="hidden md:flex items-center gap-12">
+            <a href="#experiencia" className="text-[11px] tracking-[0.25em] uppercase text-mauve hover:text-cream transition-colors duration-300">
               Experiência
             </a>
-            <a href="#galeria" className="text-xs tracking-[0.2em] uppercase text-mauve hover:text-cream transition-colors duration-300">
+            <a href="#galeria" className="text-[11px] tracking-[0.25em] uppercase text-mauve hover:text-cream transition-colors duration-300">
               Galeria
             </a>
-            <a href="#equipe" className="text-xs tracking-[0.2em] uppercase text-mauve hover:text-cream transition-colors duration-300">
+            <a href="#equipe" className="text-[11px] tracking-[0.25em] uppercase text-mauve hover:text-cream transition-colors duration-300">
               Equipe
             </a>
             <a 
               href="https://wa.me/5585992391490" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-2.5 border border-plum/60 text-mauve-light text-xs tracking-[0.15em] uppercase hover:bg-plum/20 hover:border-plum transition-all duration-300 rounded-full"
+              className="px-7 py-3 border border-plum/60 text-mauve-light text-[11px] tracking-[0.2em] uppercase hover:bg-plum/20 hover:border-plum transition-all duration-300 rounded-full"
             >
               Agendar
             </a>
@@ -66,7 +66,7 @@ function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-void/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-10 md:hidden"
+            className="fixed inset-0 z-40 bg-void/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-12 md:hidden"
           >
             <a href="#experiencia" onClick={() => setMenuOpen(false)} className="font-display text-3xl text-mauve-light">Experiência</a>
             <a href="#galeria" onClick={() => setMenuOpen(false)} className="font-display text-3xl text-mauve-light">Galeria</a>
@@ -75,7 +75,7 @@ function Navigation() {
               href="https://wa.me/5585992391490" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="mt-6 px-10 py-4 border border-plum text-mauve-light rounded-full text-sm tracking-widest uppercase"
+              className="mt-8 px-10 py-4 border border-plum text-mauve-light rounded-full text-sm tracking-widest uppercase"
             >
               Agendar Sessão
             </a>
@@ -102,7 +102,6 @@ function HeroSection() {
 
   return (
     <section ref={ref} className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
       <motion.div style={{ scale }} className="absolute inset-0">
         <video
           autoPlay
@@ -117,18 +116,17 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-void/50 via-transparent to-void/40" />
       </motion.div>
 
-      {/* Content */}
       <motion.div 
         style={{ opacity, y: textY }}
-        className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center"
+        className="relative z-10 h-full flex flex-col items-center justify-center px-8 md:px-14 lg:px-20 text-center"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mb-8"
+          className="mb-10"
         >
-          <span className="inline-flex items-center gap-3 px-5 py-2 border border-mauve/20 rounded-full text-[10px] md:text-xs tracking-[0.3em] uppercase text-mauve-light/80 backdrop-blur-sm bg-void/20">
+          <span className="inline-flex items-center gap-3 px-6 py-2.5 border border-mauve/20 rounded-full text-[10px] md:text-[11px] tracking-[0.35em] uppercase text-mauve-light/80 backdrop-blur-sm bg-void/20">
             <Sparkles className="w-3 h-3 text-plum" />
             Massoterapia & Experiências Exclusivas
             <Sparkles className="w-3 h-3 text-plum" />
@@ -139,7 +137,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-normal tracking-wide text-cream leading-[0.95]"
+          className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-normal tracking-wide text-cream leading-[0.95]"
         >
           <span className="block">Toque de</span>
           <span className="block italic font-bold text-gradient">Vênus</span>
@@ -149,16 +147,16 @@ function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="font-display text-lg md:text-2xl lg:text-3xl text-mauve-light/70 italic tracking-wider mt-8 max-w-2xl"
+          className="font-display text-lg md:text-2xl lg:text-3xl text-mauve-light/70 italic tracking-wider mt-10 max-w-2xl"
         >
-          Onde cada toque é uma jornada de volta a si mesma
+          Uma jornada de volta a si mesma
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="flex items-center gap-6 md:gap-10 mt-10 text-[10px] md:text-xs tracking-[0.25em] uppercase text-mauve/60"
+          className="flex items-center gap-6 md:gap-10 mt-12 text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-mauve/60"
         >
           <span>Relaxamento</span>
           <span className="w-10 h-[1px] bg-plum/40" />
@@ -176,19 +174,18 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 2 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-12 inline-flex items-center gap-3 px-10 py-4 bg-plum/70 hover:bg-plum backdrop-blur-sm text-cream text-xs tracking-[0.2em] uppercase rounded-full transition-all duration-300 border border-plum/50"
+          className="mt-14 inline-flex items-center gap-3 px-10 py-4 bg-plum/70 hover:bg-plum backdrop-blur-sm text-cream text-[11px] tracking-[0.25em] uppercase rounded-full transition-all duration-300 border border-plum/50"
         >
           Agende sua experiência
           <ArrowRight className="w-4 h-4" />
         </motion.a>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
@@ -211,9 +208,8 @@ function IntroSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative py-40 md:py-56 px-6 overflow-hidden">
+    <section ref={ref} className="relative py-48 md:py-64 px-8 md:px-14 lg:px-20 overflow-hidden">
       <div className="absolute top-1/4 -right-32 w-64 h-64 rounded-full bg-plum/5 blur-3xl" />
-      <div className="absolute bottom-1/4 -left-32 w-48 h-48 rounded-full bg-aubergine/10 blur-3xl" />
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.p
@@ -222,28 +218,25 @@ function IntroSection() {
           transition={{ duration: 1.4 }}
           className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.4] text-mauve-light/90"
         >
-          Cada toque carrega a intenção de{' '}
-          <span className="italic text-cream">dissolver tensões</span>, 
-          despertar sensações e reconectar você com o seu{' '}
-          <span className="italic text-cream">estado mais profundo de presença</span>.
+          Cada toque, uma intenção: <span className="italic text-cream">libertar</span>.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 flex items-center justify-center gap-4"
+          className="mt-24 flex items-center justify-center gap-4"
         >
-          <span className="w-16 h-[1px] bg-gradient-to-r from-transparent to-plum" />
+          <span className="w-20 h-[1px] bg-gradient-to-r from-transparent to-plum" />
           <span className="w-2 h-2 rounded-full bg-plum/50" />
-          <span className="w-16 h-[1px] bg-gradient-to-l from-transparent to-plum" />
+          <span className="w-20 h-[1px] bg-gradient-to-l from-transparent to-plum" />
         </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 1.2 }}
-          className="mt-10 text-mauve/50 tracking-[0.3em] text-[10px] uppercase"
+          className="mt-12 text-mauve/50 tracking-[0.4em] text-[10px] uppercase"
         >
           Fortaleza • Ceará
         </motion.p>
@@ -253,7 +246,7 @@ function IntroSection() {
 }
 
 // ============================================
-// WOW MOMENT - Cinematic foto4.jpg
+// WOW MOMENT
 // ============================================
 function WowMoment() {
   const ref = useRef<HTMLDivElement>(null);
@@ -286,11 +279,11 @@ function WowMoment() {
       
       <motion.div 
         style={{ opacity: textOpacity }}
-        className="relative z-10 h-full flex items-center justify-center px-6"
+        className="relative z-10 h-full flex items-center justify-center px-8 md:px-14 lg:px-20"
       >
         <p className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream/95 italic leading-tight text-center max-w-4xl">
-          "O corpo guarda tudo.<br/>
-          <span className="text-mauve-light">Nossas mãos existem para liberar.</span>"
+          "O corpo guarda.<br/>
+          <span className="text-mauve-light">Nossas mãos liberam."</span>
         </p>
       </motion.div>
     </section>
@@ -311,15 +304,14 @@ function ExperienceSection() {
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 0.7, 0.7, 0.85]);
 
   const services = [
-    { title: "Massagem Relaxante", desc: "Técnicas suaves que dissolvem tensões acumuladas, devolvendo ao corpo sua fluidez natural e um estado profundo de calma." },
-    { title: "Massagem Terapêutica", desc: "Tratamento direcionado para alívio de dores musculares, restauração do equilíbrio corporal e recuperação da vitalidade." },
-    { title: "Drenagem Linfática", desc: "Estimulação suave e rítmica que promove eliminação de toxinas, reduz inchaços e proporciona sensação imediata de leveza." },
-    { title: "Pedras Quentes", desc: "Calor profundo que penetra os músculos, derretendo contracturas e restaurando o equilíbrio energético do corpo." },
+    { title: "Relaxante", desc: "Dissolve tensões. Devolve calma." },
+    { title: "Terapêutica", desc: "Alivia dores. Restaura o corpo." },
+    { title: "Drenagem", desc: "Elimina toxinas. Traz leveza." },
+    { title: "Pedras Quentes", desc: "Calor profundo. Equilíbrio energético." },
   ];
 
   return (
     <section id="experiencia" ref={ref} className="relative min-h-screen overflow-hidden">
-      {/* Video Background */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
         <video
           autoPlay
@@ -336,27 +328,24 @@ function ExperienceSection() {
         />
       </motion.div>
 
-      <div className="relative z-10 py-40 md:py-56 px-6">
+      <div className="relative z-10 py-48 md:py-64 px-8 md:px-14 lg:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
-            <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-6 block">
-              ✧ Nossas Experiências ✧
+            <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
+              ✧ Experiências ✧
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-7xl text-cream font-normal tracking-wide">
               O Ritual do Toque
             </h2>
-            <p className="mt-8 text-mauve/70 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-              Cada sessão é desenhada para ser uma imersão sensorial completa. Nossas massoterapeutas combinam técnicas refinadas com sensibilidade única para criar uma experiência que transcende o comum.
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-20">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-24">
             {services.map((service, i) => (
               <motion.div
                 key={i}
@@ -366,12 +355,12 @@ function ExperienceSection() {
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 className="group p-8 md:p-10 rounded-2xl bg-aubergine/20 backdrop-blur-md border border-mauve/5 hover:border-plum/30 transition-all duration-500"
               >
-                <div className="flex items-start gap-5">
+                <div className="flex items-start gap-6">
                   <div className="w-12 h-12 rounded-full bg-plum/20 flex items-center justify-center flex-shrink-0 group-hover:bg-plum/40 transition-colors duration-300">
                     <span className="font-display text-xl text-mauve-light">{String(i + 1).padStart(2, '0')}</span>
                   </div>
-                  <div>
-                    <h3 className="font-display text-2xl md:text-3xl text-cream mb-4 group-hover:text-mauve-light transition-colors duration-300">
+                  <div className="flex-1">
+                    <h3 className="font-display text-2xl md:text-3xl text-cream mb-3 group-hover:text-mauve-light transition-colors duration-300">
                       {service.title}
                     </h3>
                     <p className="text-mauve/60 leading-relaxed text-sm md:text-base">
@@ -382,6 +371,24 @@ function ExperienceSection() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center mt-20"
+          >
+            <a 
+              href="https://wa.me/5585992391490"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-4 border border-plum/60 text-mauve-light text-[11px] tracking-[0.25em] uppercase rounded-full hover:bg-plum/20 hover:border-plum transition-all duration-300"
+            >
+              Agende sua sessão
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -395,14 +402,14 @@ function GallerySection() {
   const [selectedMedia, setSelectedMedia] = useState<number | null>(null);
 
   const media = [
-    { type: 'image', src: '/foto1.jpg', alt: 'Rafally - Massoterapeuta principal', span: 'md:col-span-2 md:row-span-2' },
+    { type: 'image', src: '/foto1.jpg', alt: 'Rafally', span: 'md:col-span-2 md:row-span-2' },
     { type: 'image', src: '/foto2.jpg', alt: 'Sessão de massagem', span: 'md:col-span-1 md:row-span-1' },
     { type: 'video', src: '/clip2.mp4', alt: 'Massagem terapêutica', span: 'md:col-span-1 md:row-span-2' },
-    { type: 'image', src: '/foto3.jpg', alt: 'Equipe Toque de Vênus', span: 'md:col-span-1 md:row-span-1' },
+    { type: 'image', src: '/foto3.jpg', alt: 'Equipe', span: 'md:col-span-1 md:row-span-1' },
   ];
 
   return (
-    <section id="galeria" className="relative py-40 md:py-56 px-6">
+    <section id="galeria" className="relative py-48 md:py-64 px-8 md:px-14 lg:px-20">
       <div className="absolute inset-0 bg-gradient-to-b from-void via-aubergine/5 to-void" />
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -411,20 +418,17 @@ function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
-          <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-6 block">
+          <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
             ✧ Galeria ✧
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-7xl text-cream font-normal tracking-wide">
-            Fragmentos de Serenidade
+            Fragmentos
           </h2>
-          <p className="mt-8 text-mauve/70 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-            Cada imagem captura a essência do que oferecemos: um espaço onde o tempo desacelera e o corpo encontra seu ritmo natural de cura.
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-20 md:auto-rows-[240px] lg:auto-rows-[280px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-24 md:auto-rows-[240px] lg:auto-rows-[280px]">
           {media.map((item, i) => (
             <motion.div
               key={i}
@@ -462,7 +466,6 @@ function GallerySection() {
         </div>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selectedMedia !== null && (
           <motion.div
@@ -486,7 +489,7 @@ function GallerySection() {
               )}
             </motion.div>
             <button 
-              className="absolute top-6 right-6 w-12 h-12 rounded-full border border-mauve/30 flex items-center justify-center text-mauve-light hover:text-cream transition-all"
+              className="absolute top-8 right-8 w-12 h-12 rounded-full border border-mauve/30 flex items-center justify-center text-mauve-light hover:text-cream transition-all"
               onClick={() => setSelectedMedia(null)}
               aria-label="Fechar"
             >
@@ -500,7 +503,7 @@ function GallerySection() {
 }
 
 // ============================================
-// TEAM SECTION - LAYOUT EDITORIAL DIFERENTE
+// TEAM SECTION
 // ============================================
 function TeamSection() {
   const team = [
@@ -513,7 +516,7 @@ function TeamSection() {
   ];
 
   return (
-    <section id="equipe" className="relative py-40 md:py-56 px-6 overflow-hidden">
+    <section id="equipe" className="relative py-48 md:py-64 px-8 md:px-14 lg:px-20 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-plum/5 blur-[100px] pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -522,17 +525,14 @@ function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-24"
+          className="text-center mb-28"
         >
-          <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-6 block">
-            ✧ Nossa Equipe ✧
+          <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
+            ✧ Equipe ✧
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-7xl text-cream font-normal tracking-wide">
             Mãos que Transformam
           </h2>
-          <p className="mt-8 text-mauve/70 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
-            Profissionais dedicadas ao seu bem-estar. Cada uma traz técnica refinada, sensibilidade e a certeza de que suas mãos podem restaurar o que o cotidiano desgasta.
-          </p>
         </motion.div>
 
         {/* Featured - Rafally */}
@@ -541,10 +541,10 @@ function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mb-20"
+          className="mb-28"
         >
-          <div className="relative rounded-3xl overflow-hidden bg-aubergine/20 backdrop-blur-md border border-mauve/10 p-10 md:p-16">
-            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          <div className="relative rounded-3xl overflow-hidden bg-aubergine/20 backdrop-blur-md border border-mauve/10 p-10 md:p-16 lg:p-20">
+            <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
               <div className="relative">
                 <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-plum/40 shadow-2xl shadow-plum/20">
                   <img src="/foto1.jpg" alt="Rafally" className="w-full h-full object-cover" />
@@ -555,15 +555,15 @@ function TeamSection() {
               </div>
               <div className="text-center md:text-left">
                 <span className="text-[10px] tracking-[0.4em] uppercase text-plum">Massoterapeuta Principal</span>
-                <h3 className="font-display text-4xl md:text-6xl text-cream mt-3 tracking-wide">Rafally</h3>
+                <h3 className="font-display text-4xl md:text-6xl text-cream mt-4 tracking-wide">Rafally</h3>
                 <p className="text-mauve/70 mt-6 max-w-md leading-relaxed text-base md:text-lg">
-                  A essência do Toque de Vênus. Suas mãos carregam a sensibilidade e a técnica que transformam cada sessão em uma experiência verdadeiramente memorável.
+                  A essência do Toque de Vênus.
                 </p>
                 <a 
                   href="https://instagram.com/rafalllyyx" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 text-sm text-mauve-light hover:text-cream transition-colors"
+                  className="inline-flex items-center gap-2 mt-8 text-sm text-mauve-light hover:text-cream transition-colors"
                 >
                   <Instagram className="w-4 h-4" />
                   @rafalllyyx
@@ -573,8 +573,8 @@ function TeamSection() {
           </div>
         </motion.div>
 
-        {/* Other team - Layout Editorial Magazine */}
-        <div className="space-y-8 md:space-y-12">
+        {/* Other team - Editorial Layout */}
+        <div className="space-y-12 md:space-y-16">
           {team.filter(t => !t.featured).map((member, i) => (
             <motion.div
               key={i}
@@ -584,38 +584,34 @@ function TeamSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="group"
             >
-              <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                {/* Foto */}
+              <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="relative flex-shrink-0">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-mauve/10 group-hover:border-plum/40 transition-all duration-500">
                     <div className="w-full h-full bg-gradient-to-br from-plum/30 to-aubergine/50 flex items-center justify-center">
                       <span className="font-display text-4xl md:text-5xl text-mauve-light">{member.name[0]}</span>
                     </div>
                   </div>
-                  {/* Número */}
                   <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-void border border-plum/30 flex items-center justify-center">
                     <span className="text-xs text-mauve-light font-display">0{i + 2}</span>
                   </div>
                 </div>
 
-                {/* Info */}
                 <div className={`text-center ${i % 2 === 1 ? 'md:text-right' : 'md:text-left'}`}>
                   <h4 className="font-display text-3xl md:text-4xl text-cream group-hover:text-mauve-light transition-colors duration-300">
                     {member.name}
                   </h4>
-                  <p className="text-xs text-mauve/50 mt-2 tracking-[0.3em] uppercase">{member.role}</p>
+                  <p className="text-[10px] text-mauve/50 mt-3 tracking-[0.3em] uppercase">{member.role}</p>
                   <a 
                     href={`https://instagram.com/${member.handle}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-4 text-sm text-mauve/60 hover:text-mauve-light transition-colors duration-300"
+                    className="inline-flex items-center gap-2 mt-5 text-sm text-mauve/60 hover:text-mauve-light transition-colors duration-300"
                   >
                     <Instagram className="w-4 h-4" />
                     @{member.handle}
                   </a>
                 </div>
 
-                {/* Linha decorativa */}
                 <div className={`hidden md:block flex-1 h-[1px] bg-gradient-to-r ${i % 2 === 1 ? 'from-mauve/20 to-transparent' : 'from-transparent to-mauve/20'}`} />
               </div>
             </motion.div>
@@ -631,7 +627,7 @@ function TeamSection() {
 // ============================================
 function CTASection() {
   return (
-    <section className="relative py-40 md:py-56 px-6 overflow-hidden">
+    <section className="relative py-48 md:py-64 px-8 md:px-14 lg:px-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-void via-aubergine/10 to-void" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-plum/8 blur-[80px]" />
       
@@ -643,13 +639,10 @@ function CTASection() {
           transition={{ duration: 1.2 }}
         >
           <span className="text-[10px] tracking-[0.5em] uppercase text-plum">O Momento é Agora</span>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream font-normal mt-8 leading-[1.1]">
-            Permita-se o<br/>
-            <span className="italic text-gradient">luxo de sentir</span>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream font-normal mt-10 leading-[1.1]">
+            Permita-se<br/>
+            <span className="italic text-gradient">sentir</span>
           </h2>
-          <p className="mt-10 text-mauve/70 leading-relaxed max-w-xl mx-auto text-sm md:text-base">
-            Reserve um momento exclusivamente para você. Nossas massoterapeutas estão prontas para criar uma experiência sob medida para o seu corpo e a sua mente.
-          </p>
           
           <motion.a
             href="https://wa.me/5585992391490"
@@ -661,7 +654,7 @@ function CTASection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 mt-16 px-12 py-5 bg-gradient-to-r from-plum to-plum/80 text-cream rounded-full text-xs tracking-[0.2em] uppercase transition-all duration-300 shadow-lg shadow-plum/20 border border-plum/50"
+            className="inline-flex items-center gap-3 mt-20 px-12 py-5 bg-gradient-to-r from-plum to-plum/80 text-cream rounded-full text-[11px] tracking-[0.25em] uppercase transition-all duration-300 shadow-lg shadow-plum/20 border border-plum/50"
           >
             <Phone className="w-4 h-4" />
             Agendar pelo WhatsApp
@@ -677,26 +670,26 @@ function CTASection() {
 // ============================================
 function Footer() {
   return (
-    <footer className="relative border-t border-aubergine/20 py-20 px-6">
+    <footer className="relative border-t border-aubergine/20 py-24 px-8 md:px-14 lg:px-20">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-16">
+        <div className="grid md:grid-cols-3 gap-16 md:gap-20">
           <div>
-            <h3 className="font-display text-2xl text-cream tracking-wider mb-6">Toque de Vênus</h3>
+            <h3 className="font-display text-2xl text-cream tracking-wider mb-8">Toque de Vênus</h3>
             <p className="text-mauve/50 text-sm leading-relaxed">
-              Massoterapia & experiências exclusivas. Um espaço dedicado ao seu bem-estar e relaxamento profundo.
+              Massoterapia & experiências exclusivas.
             </p>
           </div>
           <div>
-            <h4 className="text-[10px] tracking-[0.4em] uppercase text-mauve-light mb-6">Navegação</h4>
-            <div className="flex flex-col gap-4">
+            <h4 className="text-[10px] tracking-[0.4em] uppercase text-mauve-light mb-8">Navegação</h4>
+            <div className="flex flex-col gap-5">
               <a href="#experiencia" className="text-sm text-mauve/50 hover:text-mauve-light transition-colors">Experiências</a>
               <a href="#galeria" className="text-sm text-mauve/50 hover:text-mauve-light transition-colors">Galeria</a>
               <a href="#equipe" className="text-sm text-mauve/50 hover:text-mauve-light transition-colors">Equipe</a>
             </div>
           </div>
           <div>
-            <h4 className="text-[10px] tracking-[0.4em] uppercase text-mauve-light mb-6">Contato</h4>
-            <div className="flex flex-col gap-4">
+            <h4 className="text-[10px] tracking-[0.4em] uppercase text-mauve-light mb-8">Contato</h4>
+            <div className="flex flex-col gap-5">
               <a href="https://wa.me/5585992391490" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-sm text-mauve/50 hover:text-mauve-light transition-colors">
                 <Phone className="w-4 h-4" /> WhatsApp
               </a>
@@ -710,11 +703,11 @@ function Footer() {
           </div>
         </div>
 
-        <div className="section-divider mt-16 mb-10" />
+        <div className="section-divider mt-20 mb-12" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-[10px] text-mauve/30 tracking-wider">
-            © {new Date().getFullYear()} Toque de Vênus. Todos os direitos reservados.
+            © {new Date().getFullYear()} Toque de Vênus
           </p>
           <p className="text-[10px] text-mauve/30 tracking-[0.3em]">
             ✧ Relaxamento • Presença • Conexão ✧
