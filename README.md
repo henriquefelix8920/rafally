@@ -1,114 +1,82 @@
-# 🪐 Toque de Vênus - Website Premium
+# 🪐 TOQUE DE VÊNUS - Website Premium
 
-Website cinematográfico e premium para a clínica de massoterapia **Toque de Vênus**.
+## ⚠️ LEIA ISSO PRIMEIRO
 
-## 📋 Sobre o Projeto
+**Eu (IA) NÃO consigo enviar os arquivos para o GitHub automaticamente.**
 
-- **Tecnologias**: React + Vite + TypeScript + Tailwind CSS + Framer Motion
-- **Estilo**: Cinematográfico, editorial, com animações premium
-- **Paleta**: Preto Absoluto, Roxo Berinjela, Ameixa Escura, Malva Aveludado
+Você precisa fazer isso manualmente seguindo os passos abaixo.
 
-## 🚀 Como Fazer Push para o GitHub
+---
 
-### Passo 1: Clone o repositório (se ainda não fez)
-```bash
-git clone https://github.com/henriquefelix8920/rafally1.git
-cd rafally1
-```
+## 📥 COMO BAIXAR E ENVIAR PARA O GITHUB
 
-### Passo 2: Copie os arquivos do projeto para dentro da pasta
-Copie todos os arquivos deste projeto para dentro da pasta `rafally1/`
+### Passo 1: Baixe o Projeto
+- Clique no botão **"Download"** nesta plataforma
+- Vai baixar um arquivo ZIP
 
-### Passo 3: Adicione os arquivos de mídia
-Coloque os arquivos de foto e vídeo na pasta `public/`:
+### Passo 2: Extraia o ZIP
+- Descompacte o arquivo ZIP em uma pasta no seu computador
 
-```
-public/
-├── clip3.mp4    → Vídeo da Rafally dançando (Hero/primeira seção)
-├── clip1.mp4    → Vídeo do interior da clínica (seção Experiência)
-├── clip2.mp4    → Vídeo de massagem nas costas (galeria)
-├── foto1.jpg    → Foto da Rafally (galeria + equipe)
-├── foto2.jpg    → Homem recebendo massagem (galeria)
-├── foto3.jpg    → Demais integrantes (galeria)
-└── foto4.jpg    → Costas de mulher (seção cinematográfica)
-```
+### Passo 3: Adicione as Mídias
+Crie uma pasta `public/` e coloque dentro:
+- `foto1.jpg` - Foto da Rafally
+- `foto2.jpg` - Homem recebendo massagem
+- `foto3.jpg` - Equipe completa
+- `foto4.jpg` - Costas de mulher
+- `clip1.mp4` - Interior da clínica
+- `clip2.mp4` - Massagem nas costas
+- `clip3.mp4` - Rafally dançando
 
-### Passo 4: Instale as dependências
-```bash
-npm install
-```
+### Passo 4: Execute o Script
 
-### Passo 5: Teste localmente
-```bash
-npm run dev
-```
+**No Windows:**
+- Abra a pasta do projeto
+- Clique duas vezes em `enviar-para-github.bat`
 
-### Passo 6: Commit e Push
-```bash
-git add .
-git commit -m "✨ Toque de Vênus - Website premium completo"
-git push origin main
-```
+**No Mac/Linux:**
+- Abra o Terminal
+- Navegue até a pasta: `cd caminho/para/projeto`
+- Execute: `bash enviar-para-github.sh`
 
-## ⚠️ Importante: Arquivos de Vídeo no GitHub
+### Passo 5: Autenticação
+Quando pedir login:
+- **Username:** henriquefelix8920
+- **Password:** Use seu Personal Access Token
 
-O GitHub tem limite de 100MB por arquivo. Se os vídeos forem grandes, use uma dessas opções:
+**Como gerar o Token:**
+1. Acesse: https://github.com/settings/tokens
+2. Clique em "Generate new token (classic)"
+3. Marque a permissão: **repo**
+4. Copie o token gerado
+5. Use esse token como senha
 
-### Opção A: Git LFS (Recomendado para vídeos)
-```bash
-# Instale Git LFS
-git lfs install
+---
 
-# Adicione os vídeos ao LFS
-git lfs track "*.mp4"
+## 🚀 DEPLOY NA VERCEL
 
-# Commit e push
-git add .gitattributes
-git add public/*.mp4
-git commit -m "Adiciona vídeos com Git LFS"
-git push origin main
-```
+1. Acesse: https://vercel.com
+2. Faça login com GitHub
+3. Clique em "Add New Project"
+4. Selecione o repositório `rafally`
+5. Clique em "Deploy"
+6. Pronto! Site no ar em 2 minutos
 
-### Opção B: Hospede os vídeos em outro lugar
-Se os vídeos forem muito grandes, hospede-os em:
-- **Cloudinary** (gratuito até 25GB)
-- **AWS S3** 
-- **Vercel Blob**
-- **YouTube/Vimeo** (em modo privado)
+---
 
-Depois, altere os caminhos no código de `/clip3.mp4` para a URL externa.
+## 📋 ESTRUTURA DO SITE
 
-## 📱 Deploy
+- **Hero:** Vídeo da Rafally dançando (clip3.mp4)
+- **Intro:** Texto poético com animações
+- **WOW Moment:** Foto cinematográfica (foto4.jpg)
+- **Experiências:** Vídeo de fundo (clip1.mp4) + serviços
+- **Galeria:** Grid editorial com todas as mídias
+- **Equipe:** Destaque para Rafally + demais massoterapeutas
+- **CTA:** Chamada para WhatsApp
+- **Footer:** Links e informações
 
-### Vercel (Recomendado)
-1. Acesse [vercel.com](https://vercel.com)
-2. Importe o repositório do GitHub
-3. Clique em "Deploy"
-4. Pronto! O site estará online.
+---
 
-### GitHub Pages
-1. Vá em Settings > Pages
-2. Selecione a branch `main` e pasta `/dist`
-3. O site estará em `https://henriquefelix8920.github.io/rafally1/`
-
-## 🎨 Estrutura do Site
-
-1. **Hero** - Vídeo da Rafally dançando (clip3.mp4)
-2. **Intro** - Texto poético com animações
-3. **WOW Moment** - Foto cinematográfica (foto4.jpg)
-4. **Experiências** - Vídeo de fundo (clip1.mp4) + cards de serviços
-5. **Galeria** - Grid editorial com todas as fotos e vídeos
-6. **Equipe** - Destaque para Rafally + demais massoterapeutas
-7. **CTA** - Chamada para agendamento via WhatsApp
-8. **Footer** - Links e informações
-
-## 📞 Contato
-
-- **WhatsApp**: (85) 99239-1490
-- **Instagram Principal**: @rafalllyyx
-- **Localização**: Fortaleza, CE
-
-## 👥 Equipe
+## 👥 EQUIPE
 
 - **Rafally** (Principal) - @rafalllyyx
 - **Barbara** - @massoterapeutabarbaraa
@@ -119,4 +87,21 @@ Depois, altere os caminhos no código de `/clip3.mp4` para a URL externa.
 
 ---
 
-Desenvolvido com ❤️ por equipe premium
+## 📞 CONTATO
+
+- **WhatsApp:** (85) 99239-1490
+- **Localização:** Fortaleza, CE
+
+---
+
+## 🎨 TECNOLOGIAS
+
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Paleta: Preto Absoluto, Roxo Berinjela, Ameixa, Malva
+
+---
+
+**Pronto! Seu site premium está completo!** 🪐✨
