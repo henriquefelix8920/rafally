@@ -276,3 +276,15 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-sculpture, .hero-orbit { animation: none; }
 }
+
+/* The experiences are staged as one centered composition over the full-bleed film. */
+.experience-content {
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding-block: clamp(7rem, 12vh, 10rem);
+}
+.experience-content > .max-w-6xl { width: 100%; }
+@media (max-width: 767px) {
+  .experience-content { padding-block: 7rem; }
+}

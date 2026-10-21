@@ -332,14 +332,14 @@ function ExperienceSection() {
         />
       </motion.div>
 
-      <div className="relative z-10 py-48 md:py-64 px-8 md:px-14 lg:px-20">
+      <div className="experience-content relative z-10 px-6 sm:px-8 md:px-14 lg:px-20">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="text-center mb-24"
+            className="experience-heading text-center mb-16 md:mb-24"
           >
             <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
               ✧ Experiências ✧
@@ -349,7 +349,7 @@ function ExperienceSection() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-24">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-7 mt-0">
             {services.map((service, i) => (
               <motion.div
                 key={i}
@@ -381,7 +381,7 @@ function ExperienceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center mt-20"
+            className="text-center mt-14 md:mt-16"
           >
             <a 
               href="https://wa.me/5585992391490"
@@ -529,7 +529,7 @@ function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-16 md:mb-20"
+          className="text-center mb-24"
         >
           <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
             ✧ Equipe ✧
