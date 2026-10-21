@@ -413,7 +413,7 @@ function GallerySection() {
   ];
 
   return (
-    <section id="galeria" className="relative py-48 md:py-64 px-8 md:px-14 lg:px-20">
+    <section id="galeria" className="relative py-32 md:py-40 px-8 md:px-14 lg:px-20">
       <div className="absolute inset-0 bg-gradient-to-b from-void via-aubergine/5 to-void" />
       
       <div className="max-w-7xl mx-auto relative z-10">
