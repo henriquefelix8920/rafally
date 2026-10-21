@@ -101,7 +101,7 @@ function HeroSection() {
   const textY = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
   return (
-    <section ref={ref} className="relative h-screen w-full overflow-hidden">
+    <section ref={ref} className="relative h-[min(900px,100svh)] min-h-[680px] w-full overflow-hidden">
       <motion.div style={{ scale }} className="absolute inset-0">
         <video
           autoPlay
@@ -116,6 +116,10 @@ function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-void/50 via-transparent to-void/40" />
       </motion.div>
 
+      <div className="hero-sculpture hero-sculpture-one" aria-hidden="true"><span /></div>
+      <div className="hero-sculpture hero-sculpture-two" aria-hidden="true"><span /></div>
+      <div className="hero-orbit hero-orbit-one" aria-hidden="true" />
+      <div className="hero-orbit hero-orbit-two" aria-hidden="true" />
       <motion.div 
         style={{ opacity, y: textY }}
         className="relative z-10 h-full flex flex-col items-center justify-center px-8 md:px-14 lg:px-20 text-center"
@@ -402,10 +406,10 @@ function GallerySection() {
   const [selectedMedia, setSelectedMedia] = useState<number | null>(null);
 
   const media = [
-    { type: 'image', src: '/foto1.jpg', alt: 'Rafally', span: 'md:col-span-2 md:row-span-2' },
-    { type: 'image', src: '/foto2.jpg', alt: 'Sessão de massagem', span: 'md:col-span-1 md:row-span-1' },
-    { type: 'video', src: '/clip2.mp4', alt: 'Massagem terapêutica', span: 'md:col-span-1 md:row-span-2' },
-    { type: 'image', src: '/foto3.jpg', alt: 'Equipe', span: 'md:col-span-1 md:row-span-1' },
+    { type: 'image', src: '/foto1.jpg', alt: 'Rafally', layout: 'gallery-feature' },
+    { type: 'image', src: '/foto2.jpg', alt: 'Sessão de massagem', layout: 'gallery-standard' },
+    { type: 'video', src: '/clip2.mp4', alt: 'Massagem terapêutica', layout: 'gallery-portrait' },
+    { type: 'image', src: '/foto3.jpg', alt: 'Equipe', layout: 'gallery-standard' },
   ];
 
   return (
@@ -428,7 +432,7 @@ function GallerySection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 mt-24 md:auto-rows-[240px] lg:auto-rows-[280px]">
+        <div className="gallery-grid mt-16 md:mt-20 gap-3 md:gap-5">
           {media.map((item, i) => (
             <motion.div
               key={i}
@@ -436,7 +440,7 @@ function GallerySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.1 }}
-              className={`${item.span} img-hover-zoom relative rounded-xl overflow-hidden cursor-pointer group`}
+              className={`${item.layout} img-hover-zoom relative rounded-xl overflow-hidden cursor-pointer group`}
               onClick={() => setSelectedMedia(i)}
             >
               {item.type === 'image' ? (
@@ -516,7 +520,7 @@ function TeamSection() {
   ];
 
   return (
-    <section id="equipe" className="relative py-48 md:py-64 px-8 md:px-14 lg:px-20 overflow-hidden">
+    <section id="equipe" className="relative py-32 md:py-44 px-6 sm:px-8 md:px-14 lg:px-20 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-plum/5 blur-[100px] pointer-events-none" />
       
       <div className="max-w-6xl mx-auto relative z-10">
@@ -525,7 +529,7 @@ function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-28"
+          className="text-center mb-16 md:mb-20"
         >
           <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
             ✧ Equipe ✧
@@ -541,7 +545,7 @@ function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mb-28"
+          className="mb-16 md:mb-20"
         >
           <div className="relative rounded-3xl overflow-hidden bg-aubergine/20 backdrop-blur-md border border-mauve/10 p-10 md:p-16 lg:p-20">
             <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -574,47 +578,39 @@ function TeamSection() {
         </motion.div>
 
         {/* Other team - Editorial Layout */}
-        <div className="space-y-12 md:space-y-16">
+        <div className="team-grid">
           {team.filter(t => !t.featured).map((member, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="group"
+            <motion.article
+              key={member.handle}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: (i % 2) * 0.12 }}
+              className={`team-card group ${i === 4 ? 'team-card-last' : ''}`}
             >
-              <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                <div className="relative flex-shrink-0">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-mauve/10 group-hover:border-plum/40 transition-all duration-500">
-                    <div className="w-full h-full bg-gradient-to-br from-plum/30 to-aubergine/50 flex items-center justify-center">
-                      <span className="font-display text-4xl md:text-5xl text-mauve-light">{member.name[0]}</span>
-                    </div>
-                  </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-void border border-plum/30 flex items-center justify-center">
-                    <span className="text-xs text-mauve-light font-display">0{i + 2}</span>
-                  </div>
+              <div className="team-avatar-wrap">
+                <div className="team-avatar">
+                  <span className="font-display text-4xl md:text-5xl text-mauve-light">{member.name[0]}</span>
                 </div>
-
-                <div className={`text-center ${i % 2 === 1 ? 'md:text-right' : 'md:text-left'}`}>
-                  <h4 className="font-display text-3xl md:text-4xl text-cream group-hover:text-mauve-light transition-colors duration-300">
-                    {member.name}
-                  </h4>
-                  <p className="text-[10px] text-mauve/50 mt-3 tracking-[0.3em] uppercase">{member.role}</p>
-                  <a 
-                    href={`https://instagram.com/${member.handle}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-5 text-sm text-mauve/60 hover:text-mauve-light transition-colors duration-300"
-                  >
-                    <Instagram className="w-4 h-4" />
-                    @{member.handle}
-                  </a>
-                </div>
-
-                <div className={`hidden md:block flex-1 h-[1px] bg-gradient-to-r ${i % 2 === 1 ? 'from-mauve/20 to-transparent' : 'from-transparent to-mauve/20'}`} />
+                <span className="team-index">0{i + 2}</span>
               </div>
-            </motion.div>
+              <div className="team-copy">
+                <h4 className="font-display text-3xl md:text-4xl text-cream group-hover:text-mauve-light transition-colors duration-300">
+                  {member.name}
+                </h4>
+                <p className="text-[10px] text-mauve/60 mt-2 tracking-[0.24em] uppercase">{member.role}</p>
+                <a
+                  href={`https://instagram.com/${member.handle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 text-sm text-mauve/70 hover:text-mauve-light transition-colors duration-300"
+                >
+                  <Instagram className="w-4 h-4" />
+                  @{member.handle}
+                </a>
+              </div>
+              <span className="team-card-glint" aria-hidden="true" />
+            </motion.article>
           ))}
         </div>
       </div>
