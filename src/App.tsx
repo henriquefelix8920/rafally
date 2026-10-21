@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
-import { Instagram, MapPin, ChevronDown, Sparkles, ArrowRight, Phone, Menu, X } from 'lucide-react';
+import { Instagram, MapPin, ChevronDown, Sparkles, ArrowRight, Phone, Menu, X, HeartPulse, Droplets, Flame } from 'lucide-react';
 
 // ============================================
 // NAVIGATION
@@ -308,10 +308,10 @@ function ExperienceSection() {
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.85, 0.7, 0.7, 0.85]);
 
   const services = [
-    { title: "Relaxante", desc: "Dissolve tensões. Devolve calma." },
-    { title: "Terapêutica", desc: "Alivia dores. Restaura o corpo." },
-    { title: "Drenagem", desc: "Elimina toxinas. Traz leveza." },
-    { title: "Pedras Quentes", desc: "Calor profundo. Equilíbrio energético." },
+    { title: "Relaxante", desc: "Dissolve tensões. Devolve calma.", Icon: Sparkles },
+    { title: "Terapêutica", desc: "Alivia dores. Restaura o corpo.", Icon: HeartPulse },
+    { title: "Drenagem", desc: "Elimina toxinas. Traz leveza.", Icon: Droplets },
+    { title: "Pedras Quentes", desc: "Calor profundo. Equilíbrio energético.", Icon: Flame },
   ];
 
   return (
@@ -333,7 +333,7 @@ function ExperienceSection() {
       </motion.div>
 
       <div className="experience-content relative z-10 px-6 sm:px-8 md:px-14 lg:px-20">
-        <div className="max-w-6xl mx-auto">
+        <div className="experience-inner max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -349,7 +349,7 @@ function ExperienceSection() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-5 md:gap-7 mt-0">
+          <div className="experience-services grid md:grid-cols-2 mt-0">
             {services.map((service, i) => (
               <motion.div
                 key={i}
@@ -357,11 +357,11 @@ function ExperienceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
-                className="group p-8 md:p-10 rounded-2xl bg-aubergine/20 backdrop-blur-md border border-mauve/5 hover:border-plum/30 transition-all duration-500"
+                className="group p-6 md:p-8 rounded-2xl bg-aubergine/20 backdrop-blur-md border border-mauve/10 hover:border-plum/35 transition-all duration-500"
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 rounded-full bg-plum/20 flex items-center justify-center flex-shrink-0 group-hover:bg-plum/40 transition-colors duration-300">
-                    <span className="font-display text-xl text-mauve-light">{String(i + 1).padStart(2, '0')}</span>
+                  <div className="service-icon-wrap">
+                    <service.Icon className="w-5 h-5 text-mauve-light" strokeWidth={1.5} aria-hidden="true" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-display text-2xl md:text-3xl text-cream mb-3 group-hover:text-mauve-light transition-colors duration-300">
@@ -381,7 +381,7 @@ function ExperienceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-center mt-14 md:mt-16"
+            className="experience-cta text-center mt-14 md:mt-16"
           >
             <a 
               href="https://wa.me/5585992391490"
@@ -422,7 +422,7 @@ function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-center mb-24"
+          className="gallery-heading text-center mb-24 md:mb-28"
         >
           <span className="text-[10px] tracking-[0.5em] uppercase text-plum mb-8 block">
             ✧ Galeria ✧
@@ -432,7 +432,7 @@ function GallerySection() {
           </h2>
         </motion.div>
 
-        <div className="gallery-grid mt-16 md:mt-20 gap-3 md:gap-5">
+        <div className="gallery-grid gap-3 md:gap-5">
           {media.map((item, i) => (
             <motion.div
               key={i}
@@ -592,7 +592,7 @@ function TeamSection() {
                 <div className="team-avatar">
                   <span className="font-display text-4xl md:text-5xl text-mauve-light">{member.name[0]}</span>
                 </div>
-                <span className="team-index">0{i + 2}</span>
+                <span className="team-mark" aria-hidden="true"><Sparkles className="w-3 h-3 text-mauve-light" /></span>
               </div>
               <div className="team-copy">
                 <h4 className="font-display text-3xl md:text-4xl text-cream group-hover:text-mauve-light transition-colors duration-300">
